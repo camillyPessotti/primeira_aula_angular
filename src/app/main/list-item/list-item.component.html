@@ -1,4 +1,4 @@
-<div *ngIf="personItem">
+<div *ngIf="personItem" (click)="clicouNaDiv()">
     {{personItem.name}} {{personItem.surname}} {{personItem.birthdate}}
     <br />
     <ng-content></ng-content>

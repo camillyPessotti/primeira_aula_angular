@@ -47,4 +47,8 @@ export class MainComponent implements OnInit {
   restorePerson(indexPerson) {
     delete this.listPerson[indexPerson].deleted
   }
+
+  clickPerson(evento){
+    console.log("Meu evento é:", evento);
+  }
 }

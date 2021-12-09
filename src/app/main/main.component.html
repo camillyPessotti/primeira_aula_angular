@@ -9,12 +9,12 @@
     <br />
     <button (click)="registerPerson()">Cadastrar pessoa</button>
 
-    <h1>Lista Pessoas</h1>
+    <h2>Lista Pessoas</h2>
 
     <ul>
         <div *ngFor="let person of listPerson; let i=index">
             <li *ngIf="person.deleted != true">
-                <app-list-item [personItem]="person">
+                <app-list-item [personItem]="person" (onClick)="clickPerson($event)">
                     <br />
                     <button (click)="selectPerson(person, i)">Selecionar pessoa</button>
                     <br />
@@ -24,7 +24,7 @@
         </div>
     </ul>
 
-    <h1>Lista Pessoas Deletadas</h1>
+    <h2>Lista Pessoas Deletadas</h2>
 
     <ul>
         <div *ngFor="let person of listPerson; let i=index">

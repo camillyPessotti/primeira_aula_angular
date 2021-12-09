@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
@@ -8,8 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListItemComponent implements OnInit {
   constructor() { }
   @Input() personItem;
+  @Output() onClick = new EventEmitter<any>();
 
   ngOnInit() {
+  }
+
+  clicouNaDiv() {
+    this.onClick.emit({ nome: 'Camilly' });
   }
 
 }
