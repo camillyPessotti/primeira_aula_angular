@@ -1,0 +1,39 @@
+<div>
+    <input [(ngModel)]="name" placeholder="Nome">
+    <br />
+    <input [(ngModel)]="surname" placeholder="Sobrenome">
+    <br />
+    <input [(ngModel)]="birthdate" type="date">
+    <br />
+    <br /> Meu formulário: {{name}} {{surname}} {{birthdate}}
+    <br />
+    <button (click)="registerPerson()">Cadastrar pessoa</button>
+
+    <h1>Lista Pessoas</h1>
+
+    <ul>
+        <div *ngFor="let person of listPerson; let i=index">
+            <li *ngIf="person.deleted != true">
+                <app-list-item [personItem]="person">
+                    <br />
+                    <button (click)="selectPerson(person, i)">Selecionar pessoa</button>
+                    <br />
+                    <button (click)="deletePerson(i)">Excluir pessoa</button>
+                </app-list-item>
+            </li>
+        </div>
+    </ul>
+
+    <h1>Lista Pessoas Deletadas</h1>
+
+    <ul>
+        <div *ngFor="let person of listPerson; let i=index">
+            <li *ngIf="person.deleted == true">
+                <app-list-item [personItem]="person">
+                    <br />
+                    <button (click)="restorePerson(i)">Restaurar pessoa</button>
+                </app-list-item>
+            </li>
+        </div>
+    </ul>
+</div>
