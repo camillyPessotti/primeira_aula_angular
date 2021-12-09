@@ -5,6 +5,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.css']
 })
+
 export class ListItemComponent implements OnInit {
   constructor() { }
   @Input() personItem;
@@ -16,5 +17,4 @@ export class ListItemComponent implements OnInit {
   clicouNaDiv() {
     this.onClick.emit({ nome: 'Camilly' });
   }
-
 }
